@@ -14,6 +14,60 @@
     <![endif]-->
 
     <title>Website by CMX10</title>
+    <script language="javascript" src="javascripts/ahah.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+
+//Get all the elements of the given classname of the given tag.
+
+function getElementsByClassName(classname,tag) {
+
+    if(!tag) tag = "*";
+
+    var anchs =  document.getElementsByTagName(tag);
+
+    var total_anchs = anchs.length;
+
+    var regexp = new RegExp('\\b' + classname + '\\b');
+
+    var class_items = new Array()
+
+    
+
+    for(var i=0;i<total_anchs;i++) { //Go thru all the links seaching for the class name
+
+        var this_item = anchs[i];
+
+        if(regexp.test(this_item.className)) {
+
+            class_items.push(this_item);
+
+        }
+
+    }
+
+    return class_items;
+
+}
+
+
+
+function load(name) {
+    var url = document.URL.split("/");
+    url.pop();
+
+    ahah(url.join("/")+"/pages/"+name+".html","main-content");
+
+    if(getElementsByClassName('main-content')[0])
+
+        getElementsByClassName('main-content')[0].className="";
+
+    document.getElementById(name).className="main-content";
+
+}
+
+</script>
+
+
   </head>
 
   <body>
@@ -22,25 +76,57 @@
         <h1>CMX10:</h1>
         <h2>The first CM10 ROM for the X10</h2>
         <a href="https://github.com/CMX10/" class="button"><small>View project on</small>GitHub</a>
+      
       </div>
     </header>
+<div id="tabs">
+
+<ul>
+
+<li id="changelog"><a href="javascript:load('changelog');">Changelog</a></li>
+
+<li id="howto"><a href="javascript:load('howto');">How To</a></li>
+
+<li id="faq"><a href="javascript:load('faq');">F.A.Q</a></li>
+
+</ul>
+
+</div>
 
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h2>Changelog</h2>
+<h2>Changelog</h2>
 
-<h3>V13</h3>
+<h3>ROM</h3>
 
-<p>Wifi Fixed</p>
+<h4>v2-alpha</h4>
 
-<h3>V12</h3>
+<p>
+    * Sound fix (Still issues with headsets)<br/>
+    * Camera fix for default App (Graphical glitches)
+</p>
 
-<p>Voice + Data</p>
 
-<h3>V11</h3>
+<h3>Kernel</h3>
 
-<p>screen fix</p>
+<h4>V13</h4>
+
+<p>
+    * Wifi Fixed
+</p>
+
+<h4>V12</h4>
+
+<p>
+    * Voice + Data
+</p>
+
+<h4>V11</h4>
+
+<p>
+    * screen fix
+</p>
         </section>
 
         <aside id="sidebar">
@@ -48,7 +134,7 @@
             <small>Download</small>
             Latest Kernel
           </a>
-          <a href="http://content.wuala.com/contents/CMX10/Android/CM10-ROM/cm10-v1.zip?id=31,2052333,11-54,2052333,18" class="button download">
+          <a href="http://content.wuala.com/contents/CMX10/Android/CM10-ROM/cm10v2alpha.zip?id=31,2052333,11-1,2099950,18" class="button download">
             <small>Download</small>
             Latest Rom
           </a>
