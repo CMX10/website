@@ -17,7 +17,7 @@ function ahahDone(url, target) {
     if (req.status == 200) { // only if "OK"
       document.getElementById(target).innerHTML = req.responseText;
     } else {
-      document.getElementById(target).innerHTML=" AHAH Error:\n"+ req.status + "\n" +req.statusText;
+      document.getElementById(target).innerHTML="<caution> AHAH Error:\n"+ req.status + "\n" +req.statusText + "</caution>";
     }
   }
 }

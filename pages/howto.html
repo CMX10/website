@@ -1,3 +1,39 @@
 <h3>Install</h3>
 
+<ul>
+<li> Download Latest ROM and put zip file in SDCARD </li>
+<li> Download Kernel, and Flash using Flastool. </li>
+<li> <div class="caution"> DO NOT USE kernel.sin file provided by ROM </div> </li>
+<li> Start phone, when purple LED appears, press the back button. You are now in RecoveryMode. </li>
+<li> Wipe Cache/Data </li>
+<li> Select Install zip and browse to sdard card and to the ROM.zip file. Install </li>
+<li> Once installation is done, reboot phone. </li>
+<li> Let phone boot completely </li>
+<li> Download gapps and put them on SDCARD </li>
+<li> Reboot phone into recovery </li>
+<li> Select install from zip and browse to gapps </li>
+<li> Reboot phone. You are now Done. </li>
+</ul>
+
 <h3>Build From sources</h3>
+<ul>
+<li> repo init http://github.com/CyanogenMod/android.git -b jellybean </li>
+<li> repo sync -j 18 </li>
+<li> cd devices </li>
+<li> mkdir semc </li>
+<li> cd semc </li>
+<li> git clone http://github.com/CMX10/android_device_semc_es209ra -b jellybean es209ra </li>
+<li> cd ../../vendor </li>
+<li> mkdir -p semc </li>
+<li> cd semc </li>
+<li> git clone http://github.com/CMX10/proprietary_files -b jellybean es209ra </li>
+<li> cd ../cm/ </li>
+<li> .get-prebuilts </li>
+<li> cd .. </li>
+<li> . build/envsetup.sh </li>
+<li> brunch es209ra </li>
+
+<li><div class="caution">The current generated rom isn't flashable.</div> </li>
+<li>extract META-INF/com/google/android/update-binary from latest rom and replace into your ROM. </li>
+
+</ul>
