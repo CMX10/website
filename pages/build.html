@@ -1,0 +1,24 @@
+<h3 id="howto.build">Build From sources</h3>
+<ul>
+<li> repo init -u http://github.com/CyanogenMod/android.git -b jellybean </li>
+<li> repo sync -j 18 </li>
+<li> cd devices </li>
+<li> mkdir semc </li>
+<li> cd semc </li>
+<li> git clone http://github.com/CMX10/android_device_semc_es209ra -b jellybean es209ra </li>
+<li> cd ../../vendor </li>
+<li> mkdir -p semc </li>
+<li> cd semc </li>
+<li> git clone http://github.com/CMX10/proprietary_es209ra -b jellybean es209ra </li>
+<li> cd ../cm/ </li>
+<li> ./get-prebuilts </li>
+<li> cd .. </li>
+<li> . build/envsetup.sh </li>
+<li> brunch es209ra </li>
+
+<li><div class="caution">The current generated rom isn't flashable.</div> </li>
+<li>extract META-INF/com/google/android/update-binary from latest rom and replace into your ROM. </li>
+
+</ul>
+
+

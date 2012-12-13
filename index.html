@@ -57,20 +57,23 @@ function load(name) {
 
     ahah(url.join("/")+"/pages/"+name+".html","main-content");
 
-    if(getElementsByClassName('main-content')[0])
-
-        getElementsByClassName('main-content')[0].className="";
-
-    document.getElementById(name).className="main-content";
-
 }
+
+function init_page(){
+    load('changelog');
+    var url = document.URL.split("/")
+    url.pop()
+    ahah(url.join("/")+"/pages/latest_kernel.html", "kernel");
+    ahah(url.join("/")+"/pages/latest_rom.html", "rom");
+}
+
 
 </script>
 
 
   </head>
 
-  <body onload="load('changelog')">
+  <body onload="init_page()">
     <header>
       <div class="inner">
         <h1>CMX10:</h1>
@@ -99,15 +102,9 @@ function load(name) {
 </td>
 <td valign="top">
 <div  class="cmxsidebar">
-          <a href="http://content.wuala.com/contents/CMX10/Android/CM10-Kernel/X10_4.1.X_CMX10_bootmanager_v14.ftf?dl=1&id=31,2052333,11-201,1980903,18" class="button download">
-            <small>Download</small>
-            Latest Kernel
-          </a>
-          <a href="http://content.wuala.com/contents/CMX10/Android/CM10-ROM/cmx10-v3-beta.zip?id=31,2052333,11-1,2107646,18" class="button download">
-            <small>Download</small>
-            Latest Rom
-          </a>
-		  <a href="http://content.wuala.com/contes/CMX10/Android/" class="button download">
+            <a id="kernel" />
+            <a id="rom" />
+            <a href="http://www.wuala.com/CMX10/Android/" class="button download">
 			Browse All
 		  </a>
 		  <a href="https://github.com/CMX10/website/issues" class="button issue">
