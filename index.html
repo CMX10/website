@@ -60,11 +60,10 @@ function load(name) {
 }
 
 function init_page(){
-    load('changelog');
+    load('welcome');
     var url = document.URL.split("/")
     url.pop()
-    ahah(url.join("/")+"/pages/latest_kernel.html", "kernel");
-    ahah(url.join("/")+"/pages/latest_rom.html", "rom");
+    ahah(url.join("/")+"/pages/welcome.html");
 }
 
 
@@ -77,7 +76,7 @@ function init_page(){
     <header>
       <div class="inner">
         <h1>CMX10:</h1>
-        <h2>The first CM10 ROM for the X10</h2>
+        <h2>CM9 and CM10 ROM for the X10</h2>
         <a href="https://github.com/CMX10/" class="button"><small>View project on</small>GitHub</a>
       
       </div>
@@ -87,7 +86,9 @@ function init_page(){
 <td valign="top">
 <div class="menu cmxsidebar">
 
-<a href="javascript:load('changelog');" class="button simple-button">Changelog</a>
+<a href="javascript:load('cm10_changelog');" class="button simple-button">CM10_Changelog</a>
+
+<a href="javascript:load('cm9_changelog');" class="button simple-button">CM9_Changelog</a>
 
 <a href="javascript:load('howto');" class="button simple-button">How To</a>
 
@@ -102,8 +103,11 @@ function init_page(){
 </td>
 <td valign="top">
 <div  class="cmxsidebar">
-            <a id="kernel" />
-            <a id="rom" />
+
+<a href="http://www.wuala.com/CMX10/Android/" class="button download">Latest CM10 downloads</a>
+
+<a href="http://www.wuala.com/CMX10-Android/Android/" class="button download">Latest CM9 downloads</a>
+
             <a href="http://www.wuala.com/CMX10/Android/" class="button download">
 			Browse All
 		  </a>
