@@ -10,9 +10,10 @@ function ahah(url, target) {
     req.open("GET", url, true);
     req.send("");
   }
-}  
+}
 
 function ahahDone(url, req, target) {
+
   if (req.readyState == 4) { // only if req is "loaded"
     if (req.status == 200) { // only if "OK"
       document.getElementById(target).innerHTML = req.responseText;
@@ -20,4 +21,15 @@ function ahahDone(url, req, target) {
       document.getElementById(target).innerHTML="AHAH Error:\n"+ req.status + "\n" +req.statusText;
     }
   }
+}
+
+
+
+function load(name, target) {
+    var url = document.URL.split("/");
+    url.pop();
+    //Stupid cache force with current time
+    var date = Date();
+    ahah(url.join("/")+"/pages/"+name+".html?"+date, target);
+
 }
